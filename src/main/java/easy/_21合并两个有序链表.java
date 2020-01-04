@@ -15,10 +15,12 @@ package easy;
 public class _21合并两个有序链表 {
     public static void main(String[] args) {
 
+        // 节点1
         ListNode l1 = new ListNode(1);
         l1.next = new ListNode(2);
         l1.next.next = new ListNode(4);
 
+        // 节点2
         ListNode l2 = new ListNode(1);
         l2.next = new ListNode(3);
         l2.next.next = new ListNode(4);
@@ -36,10 +38,7 @@ public class _21合并两个有序链表 {
 
         @Override
         public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
+            return val + "-->" + next;
         }
     }
 
@@ -53,49 +52,39 @@ public class _21合并两个有序链表 {
             return l1;
         }
 
-        ListNode result = null;
-        ListNode index = null;
-
-        ListNode min = null;
-
-        while (l1.next != null) {
-            while (l2.next != null) {
-
-                System.out.println("l1=" + l1);
-                System.out.println("l2=" + l2);
+        ListNode tmp = new ListNode(0);
+        ListNode res = tmp;
 
 
-                if (l1.val < l2.val) {
-                    min = new ListNode(l1.val);
-                    l1 = l1.next;
-                } else {
-                    min = new ListNode(l2.val);
-                    l2 = l2.next;
-                }
+        // 循环访问node 直到有一个node为null
+        while (l1 != null && l2 != null) {
 
-
-                if (result == null) {
-                    index = min;
-                    result = index;
-                } else {
-                    index.next = min;
-                }
-
-                index = index.next;
-
-
-                System.out.println("result=" + index);
-
-                System.out.println("=================回合结束");
+            // 哪个节点小，将哪个节点挂载到tmp指针上
+            // 这个节点向后移动一位
+            if (l1.val < l2.val) {
+                tmp.next = new ListNode(l1.val);
+                l1 = l1.next;
+            } else {
+                tmp.next = new ListNode(l2.val);
+                l2 = l2.next;
             }
+
+            // 临时指针也向后移动一位
+            tmp = tmp.next;
         }
 
-        return result;
+        // 总有一个节点还剩一些值，将这个节点挂载到临时指针后面
+        if (l1 != null) {
+            tmp.next = l1;
+        }
 
+        if (l2 != null) {
+            tmp.next = l2;
+        }
+
+
+        // 第一个节点是守望节点，返回他到下一个节点
+        return res.next;
     }
 
-    private static void addNode(ListNode index, ListNode result, ListNode add) {
-
-
-    }
 }

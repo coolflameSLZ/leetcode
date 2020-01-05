@@ -19,14 +19,55 @@ package easy;
 public class _53最大子序和 {
 
     public static void main(String[] args) {
+        int[] nums = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
+
+        System.out.println(
+                maxSubArray(nums)
+        );
 
 
     }
 
 
-    public int maxSubArray(int[] nums) {
+    public static int maxSubArray(int[] nums) {
 
+        if (nums.length == 0) {
+            return 0;
+        }
+        int maxSum = nums[0];// 保存历史最大值
+        int curSum = nums[0];// 保存当前最大值
 
+        // 指针扫描的时候又两种策略
+        // 追加 or 新建一个数组
+        // 那种数组大，选择哪种策略
+        for (int i = 1; i < nums.length; i++) {
+
+            int newNum = nums[i];
+            int oldSum = curSum + newNum;
+
+            // 如果新的大,重新开始计数
+            // 如果还是老数组大，那么此值追加到老数组中
+            boolean newIsGood = newNum > oldSum;
+            if (newIsGood) {
+                curSum = newNum;
+            } else {
+                curSum = oldSum;
+            }
+
+            // 保存历史最大值
+            if (newIsGood && newNum > maxSum) {
+                maxSum = newNum;
+            } else if (!newIsGood && oldSum > maxSum) {
+                maxSum = oldSum;
+            }
+
+//            System.out.println("max=" + maxSum);
+//            System.out.println("cur=" + curSum);
+//            System.out.println("====================================");
+        }
+
+        return maxSum;
     }
+
 
 }

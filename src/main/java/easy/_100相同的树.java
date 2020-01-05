@@ -45,10 +45,25 @@ public class _100相同的树 {
     }
 
 
+    /**
+     * 递归 ，子任务是 对比 当前val 是否一致
+     * 将 左边的对比 和右边的对比拆解为递归运算，必须两边都一样才返回true
+     *
+     * @param p
+     * @param q
+     * @return
+     */
     public boolean isSameTree(TreeNode p, TreeNode q) {
 
+        if (p == null && q == null) {
+            return true;
+        } else if (p == null || q == null) {
+            return false;
+        } else if (p.val != q.val) {
+            return false;
+        }
 
-        return false;
+        return isSameTree(p.right, q.right) && isSameTree(p.left, q.left);
     }
 
 
@@ -69,5 +84,7 @@ public class _100相同的树 {
                     ", right=" + right +
                     '}';
         }
+
+
     }
 }

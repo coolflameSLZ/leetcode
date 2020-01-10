@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，检查它是否是镜像对称的。
  * <p>
@@ -61,24 +63,5 @@ public class _101对称二叉树 {
     }
 
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-
-
-    }
 }

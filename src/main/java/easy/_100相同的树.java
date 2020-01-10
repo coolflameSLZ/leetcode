@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 /**
  * 给定两个二叉树，编写一个函数来检验它们是否相同。
  * <p>
@@ -67,24 +69,5 @@ public class _100相同的树 {
     }
 
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-
-
-    }
 }

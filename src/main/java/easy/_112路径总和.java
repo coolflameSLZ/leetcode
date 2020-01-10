@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,22 +67,5 @@ public class _112路径总和 {
     }
 
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-    }
 }

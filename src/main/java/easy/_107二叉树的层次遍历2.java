@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 import java.util.*;
 
 /**
@@ -84,24 +86,4 @@ public class _107二叉树的层次遍历2 {
     }
 
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-
-
-    }
 }

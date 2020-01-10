@@ -1,5 +1,7 @@
 package easy;
 
+import common.ListNode;
+
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
  * <p>
@@ -28,19 +30,6 @@ public class _21合并两个有序链表 {
         System.out.println(mergeTwoLists(l1, l2));
     }
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return val + "-->" + next;
-        }
-    }
 
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {

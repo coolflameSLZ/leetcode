@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 public class _111二叉树的最小深度 {
 
     public static void main(String[] args) {
@@ -32,24 +34,5 @@ public class _111二叉树的最小深度 {
     }
 
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-
-
-    }
 }

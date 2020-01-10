@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，找出其最大深度。
  * <p>
@@ -58,24 +60,4 @@ public class _104二叉树的最大深度 {
     }
 
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-
-
-    }
 }

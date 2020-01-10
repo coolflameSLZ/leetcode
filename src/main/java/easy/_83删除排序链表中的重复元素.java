@@ -1,5 +1,7 @@
 package easy;
 
+import common.ListNode;
+
 /**
  * 给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
  * <p>
@@ -21,11 +23,11 @@ public class _83删除排序链表中的重复元素 {
     public static void main(String[] args) {
 
         // 节点1
-        _83删除排序链表中的重复元素.ListNode l1 = new _83删除排序链表中的重复元素.ListNode(1);
-        l1.next = new _83删除排序链表中的重复元素.ListNode(1);
-        l1.next.next = new _83删除排序链表中的重复元素.ListNode(2);
-        l1.next.next.next = new _83删除排序链表中的重复元素.ListNode(3);
-        l1.next.next.next.next = new _83删除排序链表中的重复元素.ListNode(3);
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(1);
+        l1.next.next = new ListNode(2);
+        l1.next.next.next = new ListNode(3);
+        l1.next.next.next.next = new ListNode(3);
 
         // 节点2
 
@@ -77,18 +79,5 @@ public class _83删除排序链表中的重复元素 {
     }
 
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return val + "-->" + next;
-        }
-    }
 
 }

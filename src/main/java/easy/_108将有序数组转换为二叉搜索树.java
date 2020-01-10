@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 /**
  * 将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
  * <p>
@@ -55,24 +57,4 @@ public class _108将有序数组转换为二叉搜索树 {
     }
 
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
-
-
-    }
 }

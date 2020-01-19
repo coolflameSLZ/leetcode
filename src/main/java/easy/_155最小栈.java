@@ -1,6 +1,6 @@
 package easy;
 
-import java.util.*;
+import java.util.Stack;
 
 /**
  * 设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
@@ -32,38 +32,48 @@ public class _155最小栈 {
     }
 
 
-    private Stack<Integer> stack = new Stack<>();
-    private List<Integer> minList = new ArrayList<>();
+    private Stack<Integer> stack;
+    private Stack<Integer> minStack;
 
 
     /**
      * initialize your data structure here.
      */
     public _155最小栈() {
-
+        stack = new Stack<>();
+        minStack = new Stack<>();
     }
 
     public void push(int x) {
 
         stack.push(x);
-        minList.add(x);
-        minList.sort(Comparator.naturalOrder());
+
+        // 如果栈中的数字更大，或者是空栈，把最小值压入栈
+
+        if (minStack.isEmpty() || minStack.peek() > x) {
+
+            minStack.push(x);
+
+        } else {
+            minStack.push(minStack.peek());
+        }
+
+
     }
 
     public void pop() {
-        Integer pop = stack.pop();
-        minList.removeIf(numInList -> Objects.equals(numInList, pop));
+
+        minStack.pop();
+        stack.pop();
+
     }
 
     public int top() {
-        Integer peek = stack.peek();
-        return peek;
-
+        return stack.peek();
     }
 
     public int getMin() {
-
-        return minList.get(0);
+        return minStack.peek();
     }
 
 

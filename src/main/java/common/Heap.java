@@ -3,7 +3,7 @@ package common;
 /**
  * 堆
  */
-class Heap {
+public class Heap {
     private int[] heapArray; // 数组，从下标1开始存储数据
     private int capacity; // 堆可以存储的最大数据个数
     private int count; // 堆中已经存储的数据个数
@@ -14,36 +14,18 @@ class Heap {
         count = 0;
     }
 
-    /**
-     * 获取父亲节点索引
-     *
-     * @param index
-     * @return
-     */
-    public int getParentIndex(int index) {
-        return index / 2;
-    }
 
     /**
-     * 获取左孩子节点索引
+     * 构建堆
      *
-     * @param index
-     * @return
+     * @param a
+     * @param n
      */
-    public int getLeftSonIndex(int index) {
-        return index * 2;
+    private static void buildHeap(int[] a, int n) {
+        for (int i = n / 2; i >= 1; --i) {
+            heapify(a, n, i);
+        }
     }
-
-    /**
-     * 获取右孩子节点索引
-     *
-     * @param index
-     * @return
-     */
-    public int getRightSonIndex(int index) {
-        return (index * 2) + 1;
-    }
-
 
     /**
      * 插入 ，
@@ -86,11 +68,16 @@ class Heap {
         heapArray[1] = heapArray[count];
         // 堆化
         heapify(heapArray, 1, count);
-
-
     }
 
-    private void heapify(int[] heapArray, int head, int tail) {
+    /**
+     * 堆化， 将一个数组，变成大顶堆
+     *
+     * @param heapArray
+     * @param head
+     * @param tail
+     */
+    public static void heapify(int[] heapArray, int head, int tail) {
 
         while (true) {
             int maxPos = head;
@@ -114,6 +101,8 @@ class Heap {
 
     }
 
+    //========似有方法============
+
     /**
      * 交换
      *
@@ -121,10 +110,40 @@ class Heap {
      * @param i
      * @param j
      */
-    private void swap(int[] heapArray, int i, int j) {
+    private static void swap(int[] heapArray, int i, int j) {
         int tmp = heapArray[i];
         heapArray[i] = heapArray[j];
         heapArray[j] = tmp;
+    }
+
+    /**
+     * 获取父亲节点索引
+     *
+     * @param index
+     * @return
+     */
+    private int getParentIndex(int index) {
+        return index / 2;
+    }
+
+    /**
+     * 获取左孩子节点索引
+     *
+     * @param index
+     * @return
+     */
+    private static int getLeftSonIndex(int index) {
+        return index * 2;
+    }
+
+    /**
+     * 获取右孩子节点索引
+     *
+     * @param index
+     * @return
+     */
+    private static int getRightSonIndex(int index) {
+        return (index * 2) + 1;
     }
 
 

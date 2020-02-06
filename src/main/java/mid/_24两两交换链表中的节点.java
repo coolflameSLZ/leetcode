@@ -21,6 +21,11 @@ import common.ListNode;
  */
 public class _24两两交换链表中的节点 {
 
+    /**
+     * {@link basealg.arrayandlink.链表经典题目}
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

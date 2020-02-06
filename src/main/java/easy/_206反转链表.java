@@ -24,7 +24,8 @@ import common.ListNode;
 public class _206反转链表 {
 
     /**
-     * todo 重点
+     * {@link basealg.arrayandlink.链表经典题目}
+     *
      * @param args
      */
     public static void main(String[] args) {

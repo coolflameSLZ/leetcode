@@ -1,5 +1,8 @@
 package mid;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
  * <p>
@@ -28,13 +31,43 @@ public class _3无重复字符的最长子串 {
 
     public static void main(String[] args) {
 
+        int i = lengthOfLongestSubstring("23456");
+        System.out.println(i);
 
     }
 
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
+
+        int result = 0;
+
+        // 字符记忆表
+        Set<Character> memChar = new HashSet<>();
+        // 快慢指针
+        int fast = 0;
+        int slow = 0;
 
 
-        return 0;
+        // 当字母不重复的时候，快指针后移，刷新结果
+        // 当字母为重复的时候，慢指针后移，同时删除掉沿途的字母，
+        // 直至字母不重复，继续操作快指针
+        while (fast < s.length() && slow < s.length()) {
+
+            char fastChar = s.charAt(fast);
+            char slowChar = s.charAt(slow);
+
+            boolean ifContains = memChar.contains(fastChar);
+
+            if (!ifContains) {
+                memChar.add(fastChar);
+                result = Integer.max(result, fast - slow + 1);
+                fast = fast + 1;
+            } else {
+                memChar.remove(slowChar);
+                slow = slow + 1;
+            }
+        }
+
+        return result;
     }
 
 

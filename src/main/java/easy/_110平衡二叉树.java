@@ -44,42 +44,22 @@ public class _110平衡二叉树 {
 
     }
 
+
     public static boolean isBalanced(TreeNode root) {
+        if (root == null) return true;
 
+        Integer diff = traverse(root.left, 0) - traverse(root.right, 0);
 
-        if (root == null) {
-            return true;
-        }
-
-        // 高度差
-        int deltaDepth = Math.abs(depth(root.left, 0) - depth(root.right, 0));
-
-        // 如果高度差 大于1 返回失败
-        if (deltaDepth > 1) {
-            return false;
-        }
-
-        // 递归查询，知道查完所有的节点
-        return isBalanced(root.left) && isBalanced(root.right);
-
-
+        return Math.abs(diff) < 2 && isBalanced(root.left) && isBalanced(root.right);
     }
 
-    // 深度优先访问，返回node 的层级
-    public static Integer depth(TreeNode root, Integer count) {
 
-        if (root == null) {
-            return count;
-        } else {
-            count = count + 1;
+    //  某个节点的最大深度
+    public static Integer traverse(TreeNode treeNode, Integer depthCount) {
+        if (treeNode == null) {
+            return depthCount;
         }
-
-
-        int leftDepth = depth(root.left, count);
-        int rightDepth = depth(root.right, count);
-
-        return Math.max(leftDepth, rightDepth);
-
+        return Integer.max(traverse(treeNode.left, depthCount + 1), traverse(treeNode.right, depthCount + 1));
     }
 
 

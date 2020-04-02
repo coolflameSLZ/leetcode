@@ -1,6 +1,6 @@
 package leetcode.mid;
 
-import alg_wang_zheng.arrayandlink.链表经典题目;
+import basealg.arrayandlink.链表经典题目;
 import common.ListNode;
 
 /**
@@ -22,7 +22,7 @@ import common.ListNode;
 public class _24两两交换链表中的节点 {
 
     /**
-     * {@link alg_wang_zheng.arrayandlink.链表经典题目}
+     * {@link 链表经典题目}
      *
      * @param args
      */

@@ -1,5 +1,6 @@
 package leetcode.easy;
 
+import basealg.arrayandlink.链表经典题目;
 import common.ListNode;
 
 /**
@@ -24,7 +25,7 @@ import common.ListNode;
 public class _206反转链表 {
 
     /**
-     * {@link alg_wang_zheng.arrayandlink.链表经典题目}
+     * {@link 链表经典题目}
      *
      * @param args
      */

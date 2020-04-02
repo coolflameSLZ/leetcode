@@ -1,4 +1,4 @@
-package alg_wang_zheng.graph;
+package basealg.graph;
 
 public class 深度优先搜索 {
 }

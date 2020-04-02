@@ -1,5 +1,6 @@
 package leetcode.mid;
 
+import basealg.arrayandlink.链表经典题目;
 import common.ListNode;
 
 /**
@@ -33,7 +34,7 @@ import common.ListNode;
 public class _142环形链表2 {
 
     /**
-     * {@link alg_wang_zheng.arrayandlink.链表经典题目}
+     * {@link 链表经典题目}
      *
      * @param args
      */

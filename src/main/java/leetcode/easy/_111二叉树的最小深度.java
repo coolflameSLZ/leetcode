@@ -1,5 +1,7 @@
 package leetcode.easy;
 
+import common.TreeNode;
+
 public class _111二叉树的最小深度 {
 
     public static void main(String[] args) {

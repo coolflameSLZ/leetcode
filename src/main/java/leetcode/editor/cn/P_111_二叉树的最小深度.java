@@ -43,21 +43,22 @@ public class P_111_二叉树的最小深度 {
 
         public int minDepth(TreeNode root) {
 
+
             if (root == null) return 0;
 
             if (root.left == null && root.right == null) return 1;
 
+            int level = Integer.MAX_VALUE;
 
-            Integer minval = Integer.MAX_VALUE;
             if (root.left != null) {
-                minval = Math.min(minDepth(root.left), minval);
+                level = Math.min(minDepth(root.left), level);
             }
 
             if (root.right != null) {
-                minval = Math.min(minDepth(root.right), minval);
+                level = Math.min(minDepth(root.right), level);
             }
 
-            return minval + 1;
+            return level + 1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -1,4 +1,4 @@
-package mid;
+package leetcode.mid;
 
 public class _96不同的二叉搜索树 {
 

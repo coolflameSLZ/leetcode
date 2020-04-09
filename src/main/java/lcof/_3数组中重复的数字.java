@@ -10,13 +10,11 @@ public class _3数组中重复的数字 {
 
     }
 
-
     public static int findRepeatNumber(int[] nums) {
 
         Set<Integer> memo = new HashSet<>();
 
         for (int i = 0; i < nums.length; i++) {
-
             int curNum = nums[i];
             boolean ifContain = memo.contains(curNum);
             if (ifContain) {
@@ -28,5 +26,4 @@ public class _3数组中重复的数字 {
 
         throw new RuntimeException("字母没有重复");
     }
-
 }

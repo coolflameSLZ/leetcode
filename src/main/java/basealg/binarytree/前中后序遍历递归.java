@@ -1,4 +1,4 @@
-package alg_wang_zheng.binarytree;
+package basealg.binarytree;
 
 import common.TreeNode;
 

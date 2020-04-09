@@ -1,4 +1,4 @@
-package alg_wang_zheng.heap;
+package basealg.heap;
 
 import leetcode.hard._23合并K个排序链表;
 

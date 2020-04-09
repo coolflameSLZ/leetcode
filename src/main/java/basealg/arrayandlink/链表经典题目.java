@@ -1,4 +1,4 @@
-package alg_wang_zheng.arrayandlink;
+package basealg.arrayandlink;
 
 import leetcode.easy._141环形链表;
 import leetcode.easy._206反转链表;

@@ -1,9 +1,11 @@
 package leetcode.hard;
 
+import basealg.arrayandlink.链表经典题目;
+
 public class _25K个一组翻转链表 {
 
     /**
-     * {@link alg_wang_zheng.arrayandlink.链表经典题目}
+     * {@link 链表经典题目}
      *
      * @param args
      */
